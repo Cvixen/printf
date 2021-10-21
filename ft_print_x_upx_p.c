@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x_X_p.c                                   :+:      :+:    :+:   */
+/*   ft_print_x_upx_p.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvixen <cvixen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:37:49 by cvixen            #+#    #+#             */
-/*   Updated: 2021/10/20 18:29:49 by cvixen           ###   ########.fr       */
+/*   Updated: 2021/10/21 22:57:38 by cvixen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hex(unsigned int i)
+static int	ft_hex(unsigned long int i)
 {
 	int		sum;
 	char	*c;
@@ -25,7 +25,7 @@ int	ft_hex(unsigned int i)
 	return (sum + 1);
 }
 
-int	ft_heX(unsigned int k)
+static int	ft_uphex(unsigned long int k)
 {
 	int		sum;
 	char	*c;
@@ -33,12 +33,23 @@ int	ft_heX(unsigned int k)
 	c = "0123456789ABCDEF";
 	if (k <= 0)
 		return (0);
-	sum = ft_heX(k / 16);
+	sum = ft_uphex(k / 16);
 	ft_putchar(c[k % 16]);
 	return (sum + 1);
 }
 
-int	XEX(unsigned long int i)
+int	ft_what_is_x(unsigned int i, int type)
+{
+	if (i == 0)
+		return (ft_putchar('0'));
+	if (type)
+		return (ft_uphex((unsigned long int)i));
+	if (!type)
+		return (ft_hex((unsigned long int)i));
+	return (0);
+}
+
+static int	what_is_p(unsigned long int i)
 {
 	int		sum;
 	char	*c;
@@ -46,7 +57,7 @@ int	XEX(unsigned long int i)
 	c = "0123456789abcdef";
 	if (i <= 0)
 		return (0);
-	sum = XEX(i / 16);
+	sum = what_is_p(i / 16);
 	ft_putchar(c[i % 16]);
 	return (sum + 1);
 }
@@ -59,5 +70,5 @@ int	ft_hep(void *a)
 		return (3);
 	}
 	write (1, "0x", 2);
-	return (XEX((unsigned long int)a) + 2);
+	return (what_is_p((unsigned long int)a) + 2);
 }

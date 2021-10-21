@@ -6,7 +6,7 @@
 /*   By: cvixen <cvixen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:38:10 by cvixen            #+#    #+#             */
-/*   Updated: 2021/10/20 19:07:53 by cvixen           ###   ########.fr       */
+/*   Updated: 2021/10/21 22:48:24 by cvixen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	ft_putchar(char k);
 int	ft_putstr(char *s1);
 int	digit_strlen(int n);
 int	ft_putnbr(int n);
-int	is_it(char c);
-int	ft_unsigned_putnbr(int n);
-int	ft_hex(unsigned int i);
-int	ft_heX(unsigned int k);
+int	ft_unsigned_putnbr(unsigned int n, int type);
+int	ft_what_is_x(unsigned int i, int type);
 int	ft_hep(void *a);
 
 #endif 

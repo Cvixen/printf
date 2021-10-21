@@ -6,7 +6,7 @@
 /*   By: cvixen <cvixen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 17:37:36 by cvixen            #+#    #+#             */
-/*   Updated: 2021/10/20 19:12:55 by cvixen           ###   ########.fr       */
+/*   Updated: 2021/10/21 22:45:59 by cvixen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,14 @@ int	ft_putnbr(int n)
 	return (i);
 }
 
-int	ft_unsigned_putnbr(unsigned int n)
+int	ft_unsigned_putnbr(unsigned int n, int type)
 {
-	int i;
-	if (n > 0)
-		i = digit_strlen(n);
-	else
-	{
+	int	i;
+
+	if (type)
 		i = 10;
-	}	
-	printf ("%d", n);
+	else
+		i = digit_strlen(n);
 	if (n >= 0 && n <= 9)
 	{
 		ft_putchar(n + '0');

@@ -1,7 +1,7 @@
 NAME 	=	libftprintf.a
 CC		=	gcc
-SRC		=	ft_printf.c	ft_selector.c	ft_printf_c_s.c	ft_printf_d_u_i.c \
-			ft_print_x_X_p.c
+SRC		=	ft_printf.c	ft_selector.c	ft_printf_c_s.c		ft_printf_d_u_i.c \
+			ft_print_x_upx_p.c
 OBJS = ${SRC:.c=.o}
 HEADER = ft_printf.h
 LIBC = ar rc
